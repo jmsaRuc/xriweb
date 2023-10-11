@@ -1,0 +1,59 @@
+version: '3.9'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: ./deploy/Dockerfile
+      target: prod
+    image: xriweb:${XRIWEB_VERSION:-latest}
+    restart: always
+    env_file:
+    - .env
+    labels:
+      # Enables traefik for this container.
+    - traefik.enable=true
+    - traefik.http.routers.xriweb.rule=Host(`${XRIWEB_TRAEFIK_HOST:-xriweb.localhost}`)
+    - traefik.http.routers.xriweb.entrypoints=http
+    - traefik.http.routers.xriweb.service=xriweb
+    - traefik.http.services.xriweb.loadbalancer.server.port=${XRIWEB_PORT:-8000}
+    networks:
+    - default
+    - traefik-shared
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      XRIWEB_HOST: 0.0.0.0
+      XRIWEB_DB_HOST: xriweb-db
+      XRIWEB_DB_PORT: 5432
+      XRIWEB_DB_USER: xriweb
+      XRIWEB_DB_PASS: xriweb
+      XRIWEB_DB_BASE: xriweb
+
+  db:
+    image: postgres:13.8-bullseye
+    hostname: xriweb-db
+    environment:
+      POSTGRES_PASSWORD: "xriweb"
+      POSTGRES_USER: "xriweb"
+      POSTGRES_DB: "xriweb"
+    volumes:
+    - xriweb-db-data:/var/lib/postgresql/data
+    restart: always
+    healthcheck:
+      test: pg_isready -U xriweb
+      interval: 2s
+      timeout: 3s
+      retries: 40
+
+
+
+volumes:
+  xriweb-db-data:
+    name: xriweb-db-data
+
+networks:
+  # Network for traefik.
+  traefik-shared:
+    name: traefik-shared
