@@ -7,7 +7,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 from yarl import URL
 
 TEMP_DIR = Path(gettempdir())
-mainpath = os.path.dirname(os.path.abspath(__file__))
+PATH = os.path.dirname(os.path.abspath(__file__))
 
 
 class LogLevel(str, enum.Enum):  # noqa: WPS600
@@ -42,27 +42,27 @@ class Settings(BaseSettings):
 
     # Path to the directory with templates
 
-    template_dir: Path = mainpath / "/web/templates"
+    template_dir: Path = PATH + "/web/templates"
 
     # Path to the directory with static files
 
-    static_dir: Path = mainpath / "/static"
+    static_dir: Path = PATH + "/static"
 
     # Path to the directory with uploaded files
 
-    upload_dir: Path = mainpath / "static/uploads"
+    upload_dir: Path = PATH + "/static/uploads"
 
-    modeltext_dir: Path = mainpath / "static/model/temp.txt"
+    modeltext_dir: Path = PATH + "/static/model/temp.txt"
 
-    modeljon_dir: Path = mainpath / "static/model/model2.json"
+    modeljon_dir: Path = PATH + "/static/model/model2.json"
 
-    modelm_dir: Path = mainpath / "static/model/model2.h5"
+    modelm_dir: Path = PATH + "/static/model/model2.h5"
 
-    modeltemp_dir: Path = mainpath / "static/model/temp/tempMain.png"
+    modeltemp_dir: Path = PATH + "/static/model/temp/tempMain.png"
 
-    modeltemp2_dir: Path = mainpath / "static/model/temp/temp.png"
+    modeltemp2_dir: str = PATH + "/static/model/temp/temp.png"
 
-    modelres_dir: Path = mainpath / "static/modelresults"
+    modelres_dir: Path = PATH + "/static/modelresults"
 
     log_level: LogLevel = LogLevel.INFO
 
