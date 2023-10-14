@@ -1,5 +1,5 @@
-FROM python:3.11.0-slim-bullseye as prod
-RUN apt-get update && apt-get install -y \
+FROM python:3.10-slim-bullseye as prod
+RUN apt-get update && apt-get install ffmpeg libsm6 libxext6 -y \
   gcc \
   && rm -rf /var/lib/apt/lists/*
 
