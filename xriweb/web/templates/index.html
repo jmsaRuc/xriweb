@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Index</title>
+        <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
+        <script
+            src="https://unpkg.com/htmx.org@1.9.6"
+            integrity="sha384-FhXw7b6AlE/jyjlZH5iHa/tTe9EpJ1Y55RjcgPbjeWMskSxZt1v9qkxLJWNJaGni"
+            crossorigin="anonymous"
+        ></script>
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css"
+            type="text/css"
+        />
+    </head>
+
+    <body>
+        <form
+            action="http://localhost:8000/uploadfile/"
+            class="dropzone"
+            id="img-dropzone"
+        ></form>
+        <script>
+            let myDropzone = new Dropzone("#img-dropzone", {
+                paramName: "file_uploads",
+            });
+        </script>
+        <div>
+            <button hx-get="/index/" hx-indicator="#indicator"
+             hx-target="#imgbody"
+             hx-swap="beforeend">
+             click me
+            </button>
+        </div>
+        <div class=""  id="imgbody">
+            {% include 'results.html' %}
+        </div>
+            <div>
+                <img
+                    id="indicator"
+                    class="htmx-indicator"
+                    src="/static/img/Loading.gif"
+                    width="250"
+                />
+            </div>
+        </div>
+
+    </body>
+</html>

@@ -1,4 +1,5 @@
 import enum
+import os
 from pathlib import Path
 from tempfile import gettempdir
 
@@ -6,6 +7,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 from yarl import URL
 
 TEMP_DIR = Path(gettempdir())
+mainpath = os.path.dirname(os.path.abspath(__file__))
 
 
 class LogLevel(str, enum.Enum):  # noqa: WPS600
@@ -27,7 +29,7 @@ class Settings(BaseSettings):
     with environment variables.
     """
 
-    host: str = "127.0.0.1"
+    host: str = "localhost"
     port: int = 8000
     # quantity of workers for uvicorn
     workers_count: int = 1
@@ -35,9 +37,35 @@ class Settings(BaseSettings):
     reload: bool = False
 
     # Current environment
+
     environment: str = "dev"
 
+    # Path to the directory with templates
+
+    template_dir: Path = mainpath / "/web/templates"
+
+    # Path to the directory with static files
+
+    static_dir: Path = mainpath / "/static"
+
+    # Path to the directory with uploaded files
+
+    upload_dir: Path = mainpath / "static/uploads"
+
+    modeltext_dir: Path = mainpath / "static/model/temp.txt"
+
+    modeljon_dir: Path = mainpath / "static/model/model2.json"
+
+    modelm_dir: Path = mainpath / "static/model/model2.h5"
+
+    modeltemp_dir: Path = mainpath / "static/model/temp/tempMain.png"
+
+    modeltemp2_dir: Path = mainpath / "static/model/temp/temp.png"
+
+    modelres_dir: Path = mainpath / "static/modelresults"
+
     log_level: LogLevel = LogLevel.INFO
+
     # Variables for the database
     db_host: str = "localhost"
     db_port: int = 5432
