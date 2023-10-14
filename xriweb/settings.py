@@ -29,7 +29,7 @@ class Settings(BaseSettings):
     with environment variables.
     """
 
-    host: str = "127.0.0.1"
+    host: str = "localhost"
     port: int = 8000
     # quantity of workers for uvicorn
     workers_count: int = 1
