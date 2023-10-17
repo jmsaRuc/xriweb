@@ -29,7 +29,7 @@ class Settings(BaseSettings):
     with environment variables.
     """
 
-    host: str = "localhost"
+    host: str = "xri.helloworld2.net"
     port: int = 8000
     # quantity of workers for uvicorn
     workers_count: int = 1
