@@ -48,6 +48,8 @@ def get_app() -> FastAPI:
         context = {"request": request}
         if hx_request:
             context = {"request": request}
+            for filename in os.listdir(settings.modelres_dir):
+                os.remove(settings.modelres_dir / filename)
             for idx, temp_file_u in enumerate(temp_fileU_List):
                 image_p = Image.open(temp_file_u, "r")
                 image = reshapeAndPlot(image_p)
@@ -60,6 +62,9 @@ def get_app() -> FastAPI:
             imgs = os.listdir(settings.modelres_dir)
             context = {"request": request, "imgs": imgs}
             return templates.TemplateResponse("results.html", context)
+        else:
+            for filename in os.listdir(settings.upload_dir):
+                os.remove(settings.upload_dir / filename)
         return templates.TemplateResponse("index.html", context)
 
     @app.post("/uploadfile/")
