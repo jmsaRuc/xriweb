@@ -54,6 +54,7 @@ def get_app() -> FastAPI:
                 image_p = Image.open(temp_file_u, "r")
                 image = reshapeAndPlot(image_p)
                 save_as = settings.modelres_dir / temp_fileu_listname[idx]
+                save_as = save_as.with_suffix(".png")
                 image.save(save_as)
                 image_p.close()
                 image.close()
