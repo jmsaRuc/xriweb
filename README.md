@@ -1,6 +1,17 @@
 # xriweb
 
+This is a web application that uses the xray image to predict if the patient has pneumonia or not.
+
 This project was generated using fastapi_template.
+
+The whole program is made with the help of github pilot.
+
+## Requirements
+
+* Python 3.10
+* Poetry 1.1.11
+* Docker 20.10.8
+* Docker-compose 1.29.2
 
 ## Poetry
 
@@ -48,20 +59,90 @@ docker-compose -f deploy/docker-compose.yml --project-directory . build
 ```bash
 $ tree "xriweb"
 xriweb
-├── conftest.py  # Fixtures for all tests.
-├── db  # module contains db configurations
-│   ├── dao  # Data Access Objects. Contains different classes to interact with database.
-│   └── models  # Package contains different models for ORMs.
-├── __main__.py  # Startup script. Starts uvicorn.
-├── services  # Package for different external services such as rabbit or redis etc.
-├── settings.py  # Main configuration settings for project.
-├── static  # Static content.
-├── tests  # Tests for project.
-└── web  # Package contains web server. Handlers, startup config.
-    ├── api  # Package with all handlers.
-    │   └── router.py  # Main router.
-    ├── application.py  # FastAPI application configuration.
-    └── lifetime.py  # Contains actions to perform on startup and shutdown.
+├── __init__.py
+├── __main__.py # Startup script. Starts uvicorn.
+├── __pycache__
+│   ├── __init__.cpython-310.pyc
+│   ├── __init__.cpython-311.pyc
+│   ├── __main__.cpython-310.pyc
+│   ├── conftest.cpython-310-pytest-7.4.2.pyc
+│   ├── conftest.cpython-311-pytest-7.4.2.pyc
+│   ├── gunicorn_runner.cpython-310.pyc
+│   └── settings.cpython-310.pyc
+├── conftest.py # Fixtures for all tests.
+├── services # Package for different external services such as rabbit or redis etc.
+│   ├── __init__.py
+│   └── __pycache__
+│       └── __init__.cpython-310.pyc
+├── settings.py # Main configuration settings for project.
+├── static # Static content.
+│   ├── __init__.py
+│   ├── globals.css
+│   ├── img
+│   │   ├── Loading.gif
+│   │   ├── __init__.py
+│   │   ├── grafig.svg
+│   │   └── wellcome.svg
+│   ├── model
+│   │   ├── __init__.py
+│   │   ├── model2.h5
+│   │   ├── model2.json
+│   │   ├── modelresults
+│   │   ├── temp
+│   │   │   ├── __init__.py
+│   │   │   ├── temp.png
+│   │   │   └── tempMain.png
+│   │   └── temp.txt
+│   ├── modelresults
+│   │   └── ikkepnomonia2.png
+│   ├── style.css
+│   └── uploads
+│       ├── bakteriapneumonias.png
+│       └── ikkepnomonia2.png
+├── tests # Tests for project.
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-310.pyc
+│   │   ├── __init__.cpython-311.pyc
+│   │   ├── test_xriweb.cpython-310-pytest-7.4.2.pyc
+│   │   ├── test_xriweb.cpython-310.pyc
+│   │   └── test_xriweb.cpython-311-pytest-7.4.2.pyc
+│   └── test_xriweb.py
+└── web # Package contains web server. Handlers, startup config.
+    ├── __init__.py
+    ├── __pycache__
+    │   ├── __init__.cpython-310.pyc
+    │   ├── __init__.cpython-311.pyc
+    │   ├── application.cpython-310.pyc
+    │   ├── application.cpython-311.pyc
+    │   ├── lifetime.cpython-310.pyc
+    │   ├── lifetime.cpython-311.pyc
+    │   ├── reshaperun.cpython-310.pyc
+    │   └── xri.cpython-310.pyc
+    ├── api # Package with all handlers.
+    │   ├── __init__.py
+    │   ├── __pycache__
+    │   │   ├── __init__.cpython-310.pyc
+    │   │   ├── __init__.cpython-311.pyc
+    │   │   ├── router.cpython-310.pyc
+    │   │   └── router.cpython-311.pyc
+    │   ├── monitoring
+    │   │   ├── __init__.py
+    │   │   ├── __pycache__
+    │   │   │   ├── __init__.cpython-310.pyc
+    │   │   │   ├── __init__.cpython-311.pyc
+    │   │   │   ├── views.cpython-310.pyc
+    │   │   │   └── views.cpython-311.pyc
+    │   │   └── views.py
+    │   └── router.py # Main router.
+    ├── application.py # FastAPI application configuration.
+    ├── lifetime.py # Contains actions to perform on startup and shutdown.
+    ├── reshaperun.py
+    ├── templates
+    │   ├── __init__.py
+    │   ├── index.html
+    │   └── results.html
+    └── xri.py # The program itself, that th web apl9cation is using to make predictions, and make the result image.
 ```
 
 ## Configuration
