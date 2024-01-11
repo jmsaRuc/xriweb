@@ -56,7 +56,7 @@ docker-compose -f deploy/docker-compose.yml --project-directory . build
 
 ## Project structure
 
-![Visualization of the codebase](./diagram.svg)
+![Visualization of the codebase](./docs/diagram.svg)
 
 ```bash
 $ tree "xriweb"
@@ -147,7 +147,7 @@ xriweb
     └── xri.py # The program itself, that th web apl9cation is using to make predictions, and make the result image.
 ```
 ### Network Diagram
-![Network diagram draw io](./iodiagram.svg)
+![Network diagram draw io](./docs/iodiagram.svg)
 
 ## Configuration
 
