@@ -1,10 +1,10 @@
 name: Drawui Export
 on:
+  workflow_dispatch: {}
   push:
     branches:
     - master
-    paths:
-    - 'docs/drawio/**.drawio'
+
 jobs:
   drawio_export:
     runs-on: ubuntu-latest
@@ -12,10 +12,11 @@ jobs:
     - name: Checkout
       uses: actions/checkout@master
       with:
-        fetch-depth: 1
+        fetch-depth: 0
     - name: Drawio Export
       uses: rlespinasse/drawio-export-action@v2.10.0
       with:
+        path: drawio
         format: svg
         transparent: false
         output: docs
