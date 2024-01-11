@@ -1,0 +1,21 @@
+name: Drawui Export
+on:
+  push:
+    branches:
+    - master
+    paths:
+    - 'docs/drawio/**.drawio'
+jobs:
+  drawio_export:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@master
+      with:
+        fetch-depth: 1
+    - name: Drawio Export
+      uses: rlespinasse/drawio-export-action@v2.10.0
+      with:
+        format: svg
+        transparent: false
+        output: docs
