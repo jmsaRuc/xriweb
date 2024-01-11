@@ -29,9 +29,3 @@ jobs:
       with:
         name: "my-diagram"
         path: "downloads"
-    - name: Export draw io file
-      uses: rlespinasse/drawio-export-action@v2
-      with:
-        path: "docs/drawio"
-        format: svg
-        transparent: false
