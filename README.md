@@ -56,6 +56,8 @@ docker-compose -f deploy/docker-compose.yml --project-directory . build
 
 ## Project structure
 
+![Visualization of the codebase](./diagram.svg)
+
 ```bash
 $ tree "xriweb"
 xriweb

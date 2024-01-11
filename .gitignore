@@ -86,7 +86,10 @@ notebook/
 
 # IPython
 profile_default/
-ipython_config.py
+ipython_config.p
+
+# model tempfolder
+xriweb/static/model/temp/
 
 # pyenv
 #   For a library or package, you might want to ignore these files since the code is
