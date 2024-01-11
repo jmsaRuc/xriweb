@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-01-11T13:07:29.422Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="vIo_Aaho0f3UJI60b7nR" version="22.1.18" type="github">
+<mxfile host="app.diagrams.net" modified="2024-01-11T14:50:41.398Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="TkHwkoOKRinsaE2SwkYJ" version="22.1.18" type="github">
   <diagram name="Page-1" id="e3a06f82-3646-2815-327d-82caf3d4e204">
-    <mxGraphModel dx="1915" dy="1056" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1.5" pageWidth="1169" pageHeight="826" background="none" math="0" shadow="0">
+    <mxGraphModel dx="1654" dy="912" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1.5" pageWidth="1169" pageHeight="826" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" style=";html=1;" />
         <mxCell id="1" style=";html=1;" parent="0" />
@@ -137,7 +137,7 @@
         <mxCell id="6a7d8f32e03d9370-57" value="&lt;b&gt;Cloudflare&#39;s Network&lt;/b&gt;" style="whiteSpace=wrap;html=1;fillColor=#FFD470;gradientColor=none;fontSize=14;strokeColor=none;verticalAlign=top;" parent="1" vertex="1">
           <mxGeometry x="1020" y="90" width="352.25" height="610" as="geometry" />
         </mxCell>
-        <mxCell id="P7gEYuGDoSCaP3gMuOwe-5" value="" style="verticalLabelPosition=bottom;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;shape=mxgraph.citrix.switch;fillColor=#66B2FF;gradientColor=#0066CC;fontSize=14;" vertex="1" parent="1">
+        <mxCell id="P7gEYuGDoSCaP3gMuOwe-5" value="DNS" style="verticalLabelPosition=top;aspect=fixed;html=1;verticalAlign=bottom;strokeColor=none;shape=mxgraph.citrix.switch;fillColor=#66B2FF;gradientColor=#0066CC;fontSize=14;labelPosition=center;align=center;" vertex="1" parent="1">
           <mxGeometry x="1224" y="370.87" width="92" height="41.5" as="geometry" />
         </mxCell>
         <mxCell id="P7gEYuGDoSCaP3gMuOwe-15" value="Cloudflare&lt;br&gt;&amp;nbsp;Edge Server" style="verticalLabelPosition=top;aspect=fixed;html=1;verticalAlign=bottom;strokeColor=none;shape=mxgraph.citrix.chassis;fillColor=#66B2FF;gradientColor=#0066CC;fontSize=14;labelPosition=center;align=center;spacing=7;" vertex="1" parent="1">
