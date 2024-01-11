@@ -15,14 +15,14 @@ jobs:
     - name: Repo Visualizer
       uses: githubocto/repo-visualizer@0.9.1
       with:
-        output_file: "diagram.svg"
+        output_file: "docs/diagram.svg"
         root_path: "xriweb/"
         excluded_paths: "dist,node_modules"
     - name: Update diagram
       id: make_diagram
       uses: githubocto/repo-visualizer@0.9.1
       with:
-        output_file: "output-diagram.svg"
+        output_file: "docs/utput-diagram.svg"
         artifact_name: "my-diagram"
     - name: Get artifact
       uses: actions/download-artifact@v3

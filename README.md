@@ -146,6 +146,8 @@ xriweb
     │   └── results.html
     └── xri.py # The program itself, that th web apl9cation is using to make predictions, and make the result image.
 ```
+### Network Diagram
+![Network diagram draw io](./iodiagram.svg)
 
 ## Configuration
 
