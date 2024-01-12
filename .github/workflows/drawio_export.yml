@@ -16,7 +16,7 @@ jobs:
     - name: Drawio Export
       uses: rlespinasse/drawio-export-action@v2.10.0
       with:
-        path: drawio
+        path: drawio/
         format: svg
         transparent: false
-        output: docs/iodiagram.svg
+        output: docs/
