@@ -1,5 +1,6 @@
 name: Keep draw.io export synchronized
 on:
+  workflow_dispatch: {}
   push:
     branches:
       - main
