@@ -10,7 +10,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = ">=3.9,<3.11"
-fastapi = "^0.100.0"
+fastapi = "^0.109.1"
 uvicorn = { version = "^0.22.0", extras = ["standard"] }
 pydantic = "^2"
 yarl = "^1.9.2"
